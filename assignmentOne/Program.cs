@@ -46,6 +46,7 @@ namespace assignmentOne
             int d2;
             int j;
             bool selfDividing;
+            int countOfSd;
 
             //Pseudocode
             p = "This is pseudocode. Initialize a variable selfDividing=true\n";
@@ -68,6 +69,7 @@ namespace assignmentOne
             for (int i=x; i<y+1; i++) //For each number in the given range of x to y
             {
                 selfDividing = true; //Start with a optimistic judgement, this number is selfDividing
+                countOfSd = 0;
                 j = i;
                 while (j > 0) //Use a different variable 'j' to get each digit in the given number
                 {
@@ -96,12 +98,23 @@ namespace assignmentOne
                 if (selfDividing==true)
                 {
                     Debug.WriteLine($"{i} is self dividing", i);
+                    countOfSd += 1;
                 }
                 else
                 {
                     //Debug.WriteLine($"{i} is not self dividing", i);
                 }
+                if (i == y)
+                {
+                    Debug.WriteLine($"There is/are {countOfSd} self dividing numbers", countOfSd);
+                }
             }
+            
+            p = "This is the list of Learnings from the assignment and recommendations\n";
+            p = p + "Learning 1. Writing a clear Pseudocode speeds up the coding\n";
+            p = p + "Learning 2. Using the correct type of loop, like while, for at the right place helps in easy handling\n";
+            p = p + "Recommendation: This is a good practice program. Continue kept the program in endless loop. In future, show caution about this when coding \n";
+            Debug.WriteLine(p);
         }
     }
 }
